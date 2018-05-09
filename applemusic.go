@@ -49,7 +49,8 @@ func ParseHTML(r io.Reader) (Info, error) {
 
 		case html.StartTagToken:
 			// Note that <meta> elements don't have end tags.
-			// TODO: why is z.Token() empty?
+			// Also, note that we can't use z.Token() because it won't be
+			// populated at this point.
 			// Hence we're doing manual accumulation of attributes below.
 			tn, _ := z.TagName()
 
