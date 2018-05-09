@@ -1,7 +1,8 @@
+// Package applemusic provides functions for parsing Apple Music Preview
+// HTML pages.
 package applemusic
 
 import (
-	"errors"
 	"io"
 	"strconv"
 
@@ -114,13 +115,10 @@ func ParseHTML(r io.Reader) (Info, error) {
 				switch nv {
 				case "music:album":
 					i.AlbumURL = cv
-				} // ... possibly more cases ...
+				}
 			}
 		}
 	}
-
-	// to make the compiler happy
-	return Info{}, errors.New("should never be reached")
 }
 
 func attrVal(as []html.Attribute, key string) string {
