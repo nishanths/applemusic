@@ -23,28 +23,6 @@ type Artwork struct {
 	Width, Height int
 }
 
-// https://itunes.apple.com/us/album/651871544?i=651871679
-// <meta> tags attributes
-// ----------------------
-//
-// property og:image
-// content https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/69/ef/ca/69efca19-5e7a-67a1-a9c4-a748fa8b3db6/603497925759.jpg/1200x630bb.jpg
-//
-// property og:image:secure_url
-// content https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/69/ef/ca/69efca19-5e7a-67a1-a9c4-a748fa8b3db6/603497925759.jpg/1200x630bb.jpg
-//
-// property og:image:type
-// content image/jpg
-//
-// property og:image:width
-// content 1200
-//
-// property og:image:height
-// content 630
-//
-// property music:musician
-// content https://itunes.apple.com/us/artist/fleetwood-mac/158038
-
 // ParseHTML parses info from HTML pages such as
 // https://itunes.apple.com/us/album/651871544?i=651871679.
 func ParseHTML(r io.Reader) (Info, error) {
